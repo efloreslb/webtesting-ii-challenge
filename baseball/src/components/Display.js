@@ -8,7 +8,7 @@ class Display extends React.Component {
    }
 
    incStrike = () => {
-      if (this.state.strike < 3) {
+      if (this.state.strike < 2) {
          this.setState({
             ...this.state,
             strike: this.state.strike + 1
@@ -23,7 +23,7 @@ class Display extends React.Component {
    }
 
    incBall = () => {
-      if (this.state.ball < 4) {
+      if (this.state.ball < 3) {
          this.setState({
             ...this.state,
             ball: this.state.ball + 1
@@ -62,8 +62,8 @@ class Display extends React.Component {
       return (
          <>
             <h1>Display</h1>
-            <h3>Balls: {this.state.ball}</h3>
-            <h3>Strikes: {this.state.strike}</h3>
+            <h3>Balls Total: <div data-testid="ballTotal">{this.state.ball}</div></h3>
+            <h3>Strikes Total: <div data-testid="strikeTotal">{this.state.strike}</div></h3>
 
             <Dashboard incStrike={this.incStrike} incBall={this.incBall} incFoul={this.incFoul} incHit={this.incHit}/>
          </>
